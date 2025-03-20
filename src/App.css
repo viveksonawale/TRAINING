@@ -5,6 +5,8 @@
   --card-background: #ffffff;
   --text-color: #2c3e50;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-color: #ddd;
+  --success-color: #4caf50;
 }
 
 * {
@@ -573,4 +575,116 @@ footer {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #eee;
+}
+
+/* Workout Completion Section */
+.workout-complete-section {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.complete-workout-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.complete-workout-button:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.workout-notes {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 1rem;
+}
+
+.add-notes-button {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.add-notes-button:hover {
+  background-color: var(--card-background);
+}
+
+.notes-form {
+  width: 100%;
+}
+
+.notes-form textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: inherit;
+  resize: vertical;
+}
+
+.save-notes-button {
+  background-color: var(--card-background);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.save-notes-button:hover {
+  background-color: var(--background-color);
+}
+
+.workout-completed-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: var(--success-color, #4caf50);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+  width: 100%;
+  max-width: 300px;
+}
+
+.success-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

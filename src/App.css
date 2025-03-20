@@ -79,7 +79,6 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #4CAF50, #2196F3);
   color: white;
   padding: 6rem 0;
   text-align: center;
@@ -89,17 +88,38 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 70vh;
 }
 
-.hero::before {
-  content: '';
+.hero-video {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
-  opacity: 0.1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.8), rgba(33, 150, 243, 0.8));
   z-index: 1;
 }
 
@@ -333,11 +353,37 @@ button.active {
 .video-placeholder {
   background-color: #eee;
   border-radius: 8px;
-  height: 200px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 1rem 0;
+  overflow: hidden;
+}
+
+.video-container, .image-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.exercise-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: #000;
+}
+
+.exercise-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .video-placeholder-content {
@@ -687,4 +733,111 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Exercise type badges */
+.exercise-type-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  margin-left: 10px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.exercise-card .exercise-type-badge:before {
+  content: "•";
+  margin-right: 5px;
+}
+
+.exercise-card .strength-video {
+  border-left: 4px solid #4a90e2;
+}
+
+.exercise-card .cardio-video {
+  border-left: 4px solid #e24a4a;
+}
+
+.exercise-card .flexibility-video {
+  border-left: 4px solid #4ae2a0;
+}
+
+/* Exercise card styling enhancements */
+.exercise-card {
+  position: relative;
+}
+
+.exercise-card:nth-child(3n+1) .exercise-type-badge {
+  background-color: rgba(74, 144, 226, 0.2);
+  color: #4a90e2;
+}
+
+.exercise-card:nth-child(3n+2) .exercise-type-badge {
+  background-color: rgba(226, 74, 74, 0.2);
+  color: #e24a4a;
+}
+
+.exercise-card:nth-child(3n+3) .exercise-type-badge {
+  background-color: rgba(74, 226, 160, 0.2);
+  color: #4ae2a0;
+}
+
+/* Video styling by exercise type */
+.strength-video {
+  border: 1px solid #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+.cardio-video {
+  border: 1px solid #e24a4a;
+  box-shadow: 0 0 5px rgba(226, 74, 74, 0.3);
+}
+
+.flexibility-video {
+  border: 1px solid #4ae2a0;
+  box-shadow: 0 0 5px rgba(74, 226, 160, 0.3);
+}
+
+/* Add video time markers to help differentiate videos */
+.strength-video::before {
+  content: "Strength";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: #4a90e2;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  z-index: 10;
+  opacity: 0.8;
+}
+
+.cardio-video::before {
+  content: "Cardio";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: #e24a4a;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  z-index: 10;
+  opacity: 0.8;
+}
+
+.flexibility-video::before {
+  content: "Flexibility";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: #4ae2a0;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  z-index: 10;
+  opacity: 0.8;
 }

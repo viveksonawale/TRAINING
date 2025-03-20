@@ -1,9 +1,17 @@
 import React from 'react'
+import homepageVideo from '../assets/videos/HomeVideos/homepageVideo.mp4'
 
 const Home = () => {
   return (
     <>
       <header className="hero">
+        <div className="hero-video">
+          <video autoPlay muted loop playsInline className="background-video">
+            <source src={homepageVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className="overlay"></div>
+        </div>
         <div className="hero-content">
           <h1>Your Personal Home Workout Guide</h1>
           <p>Transform your life with personalized workout routines, expert guidance, and progress tracking tools designed for your fitness journey</p>

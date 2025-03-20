@@ -366,26 +366,31 @@ const Progress = () => {
 
         <h3 className="section-title">Workout Types</h3>
         <div className="workout-types-grid">
-          <div className="type-card">
+          <div className="type-card strength">
             <h4>Strength</h4>
             <div className="type-value">{statistics.workoutTypes.strength}</div>
           </div>
-          <div className="type-card">
+          <div className="type-card cardio">
             <h4>Cardio</h4>
             <div className="type-value">{statistics.workoutTypes.cardio}</div>
           </div>
-          <div className="type-card">
+          <div className="type-card flexibility">
             <h4>Flexibility</h4>
             <div className="type-value">{statistics.workoutTypes.flexibility}</div>
           </div>
-          <div className="type-card">
+          <div className="type-card hiit">
             <h4>HIIT</h4>
             <div className="type-value">{statistics.workoutTypes.hiit}</div>
           </div>
         </div>
         
         <div className="action-buttons">
-          <button onClick={() => startEditing('workout')}>Log Workout</button>
+          <button onClick={() => startEditing('workout')}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 5v14M5 12h14"></path>
+            </svg>
+            Log Workout
+          </button>
         </div>
       </div>
     );
@@ -629,34 +634,91 @@ const Progress = () => {
     return (
       <div className="workout-history-container">
         <h2>Workout History</h2>
-        {workoutHistory.length > 0 ? (
-          <div className="history-list">
-            {workoutHistory.map((workout, index) => (
-              <div className="history-item" key={index}>
-                <div className="history-date">
-                  {new Date(workout.date).toLocaleDateString()}
-                </div>
-                <div className="history-details">
-                  <h3>{workout.title}</h3>
-                  <div className="history-meta">
-                    <span className="history-type">{workout.type.charAt(0).toUpperCase() + workout.type.slice(1)}</span>
-                    <span className="history-duration">{workout.duration} minutes</span>
-                    <span className="history-difficulty">{workout.difficulty.charAt(0).toUpperCase() + workout.difficulty.slice(1)}</span>
-                  </div>
-                  {workout.notes && (
-                    <div className="history-notes">
-                      <p>{workout.notes}</p>
-                    </div>
-                  )}
+        
+        {workoutHistory && workoutHistory.length > 0 ? (
+          <>
+            <div className="history-summary">
+              <div className="summary-card">
+                <h3>Total Workouts</h3>
+                <div className="summary-value">{workoutHistory.length}</div>
+              </div>
+              <div className="summary-card">
+                <h3>Last Workout</h3>
+                <div className="summary-value">
+                  {new Date(workoutHistory[0].date).toLocaleDateString()}
                 </div>
               </div>
-            ))}
-          </div>
+              <div className="summary-card">
+                <h3>Most Common Type</h3>
+                <div className="summary-value">
+                  {getMostCommonWorkoutType(workoutHistory)}
+                </div>
+              </div>
+            </div>
+            
+            <div className="history-list">
+              {workoutHistory.map((workout, index) => (
+                <div className={`history-item ${workout.type}`} key={index}>
+                  <div className="history-date">
+                    {new Date(workout.date).toLocaleDateString()}
+                  </div>
+                  <div className="history-details">
+                    <h3>{workout.title}</h3>
+                    <div className="history-meta">
+                      <span className="history-type">{workout.type.charAt(0).toUpperCase() + workout.type.slice(1)}</span>
+                      <span className="history-duration">{workout.duration} minutes</span>
+                      {workout.difficulty && (
+                        <span className="history-difficulty">{workout.difficulty.charAt(0).toUpperCase() + workout.difficulty.slice(1)}</span>
+                      )}
+                    </div>
+                    {workout.notes && (
+                      <div className="history-notes">
+                        <p>{workout.notes}</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
         ) : (
-          <p className="no-data">No workout history available yet.</p>
+          <div className="no-data">
+            <p>No workout history available yet.</p>
+            <button 
+              className="add-workout-btn"
+              onClick={() => startEditing('workout')}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+              Log Your First Workout
+            </button>
+          </div>
         )}
       </div>
     );
+  };
+
+  // Helper function to find most common workout type
+  const getMostCommonWorkoutType = (workouts) => {
+    if (!workouts || workouts.length === 0) return 'None';
+    
+    const typeCounts = workouts.reduce((acc, workout) => {
+      acc[workout.type] = (acc[workout.type] || 0) + 1;
+      return acc;
+    }, {});
+    
+    let mostCommonType = '';
+    let highestCount = 0;
+    
+    Object.entries(typeCounts).forEach(([type, count]) => {
+      if (count > highestCount) {
+        highestCount = count;
+        mostCommonType = type;
+      }
+    });
+    
+    return mostCommonType.charAt(0).toUpperCase() + mostCommonType.slice(1);
   };
 
   return (
@@ -693,9 +755,13 @@ const Progress = () => {
           Achievements
         </button>
         <button
-          className={`tab ${activeTab === 'history' ? 'active' : ''}`}
+          className={`tab history-tab ${activeTab === 'history' ? 'active' : ''}`}
           onClick={() => setActiveTab('history')}
         >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '8px'}}>
+            <path d="M12 8v4l3 3"></path>
+            <circle cx="12" cy="12" r="10"></circle>
+          </svg>
           Workout History
         </button>
       </div>

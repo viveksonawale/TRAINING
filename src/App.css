@@ -47,9 +47,94 @@ body {
 }
 
 .logo {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--primary-color);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #2c3e50;
+  background: linear-gradient(90deg, #4a90e2, #5cb860);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #5cb860, #4a90e2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.logo::before {
+  content: "💪";
+  margin-right: 10px;
+  font-size: 1.8rem;
+  -webkit-text-fill-color: initial;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover::before {
+  transform: rotate(5deg) scale(1.1);
+}
+
+/* Gradient border on hover */
+.glow-animation {
+  position: relative;
+}
+
+.glow-animation::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  padding: 2px;
+  background: linear-gradient(45deg, #4a90e2, #5cb860, #4a90e2);
+  background-size: 200% 200%;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.glow-animation:hover::before {
+  opacity: 1;
+  background-position: 100% 100%;
+}
+
+/* Remove old animations */
+@keyframes pulseRadial {
+  0% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@keyframes textPulse {
+  0% {
+    text-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(92, 184, 96, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+  }
 }
 
 .nav-links {
@@ -62,19 +147,36 @@ body {
   color: var(--text-color);
   font-size: 1.1rem;
   font-weight: 500;
-  transition: color 0.3s ease;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #4a90e2, #5cb860);
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
   color: var(--primary-color);
-  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .nav-links a.active {
   color: var(--primary-color);
-  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.nav-links a.active::after {
+  width: 100%;
 }
 
 /* Hero Section */
@@ -841,3 +943,4 @@ footer {
   z-index: 10;
   opacity: 0.8;
 }
+

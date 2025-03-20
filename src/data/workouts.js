@@ -2,61 +2,151 @@ export const workouts = {
   strength: [
     {
       id: 1,
-      title: "Full Body Power",
-      duration: "45 min",
-      level: "Intermediate",
-      description: "A complete full-body workout focusing on building strength and muscle.",
+      title: "Beginner Full-Body Routine",
+      duration: "30-45 min",
+      level: "Beginner",
+      description: "Build foundational strength and mobility with this accessible routine.",
       image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
       exercises: [
         {
-          name: "Push-ups",
+          name: "Bodyweight Squats",
           sets: 3,
-          reps: "12-15",
+          reps: "12",
           duration: "60 sec",
-          videoUrl: "", // Placeholder for video URL
-          instructions: "1. Start in a plank position\n2. Lower your body until your chest nearly touches the floor\n3. Push back up to starting position\n4. Maintain a straight body throughout"
+          videoUrl: "",
+          instructions: "1. Stand with feet shoulder-width apart.\n2. Lower hips until thighs are parallel to the ground.\n3. Keep chest up and push through heels to stand."
         },
         {
-          name: "Squats",
-          sets: 4,
+          name: "Incline Push-ups",
+          sets: 3,
+          reps: "10",
+          duration: "60 sec",
+          videoUrl: "",
+          instructions: "1. Place hands on an elevated surface.\n2. Lower chest to the surface, keeping elbows at 45°.\n3. Push back up to starting position."
+        },
+        {
+          name: "Glute Bridges",
+          sets: 3,
           reps: "15",
-          duration: "90 sec",
-          videoUrl: "", // Placeholder for video URL
-          instructions: "1. Stand with feet shoulder-width apart\n2. Lower your body as if sitting back into a chair\n3. Keep chest up and back straight\n4. Return to standing position"
+          duration: "45 sec",
+          videoUrl: "",
+          instructions: "1. Lie on your back, feet flat and knees bent.\n2. Lift hips towards the ceiling.\n3. Squeeze glutes at the top and slowly lower down."
         },
         {
-          name: "Dumbbell Rows",
+          name: "Seated Forward Fold",
+          sets: 1,
+          reps: "30 sec hold",
+          duration: "30 sec",
+          videoUrl: "",
+          instructions: "1. Sit with legs extended straight.\n2. Reach for toes, keeping back straight.\n3. Hold for 30 seconds."
+        },
+        {
+          name: "Plank",
           sets: 3,
-          reps: "12 each side",
-          duration: "60 sec",
-          videoUrl: "", // Placeholder for video URL
-          instructions: "1. Place one knee and hand on bench\n2. Pull dumbbell to chest level\n3. Lower with control\n4. Maintain flat back position"
+          reps: "30 sec hold",
+          duration: "30 sec",
+          videoUrl: "",
+          instructions: "1. Keep forearms on the ground, body in a straight line.\n2. Engage core and hold for 30 seconds."
         }
       ]
     },
     {
       id: 2,
-      title: "Upper Body Focus",
-      duration: "40 min",
-      level: "Beginner",
-      description: "Build upper body strength with this targeted workout routine.",
-      image: "https://images.unsplash.com/photo-1590507621108-433608c97823?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      title: "Strength & Muscle Building",
+      duration: "45-60 min",
+      level: "Intermediate",
+      description: "Increase strength and muscle mass with compound movements.",
+      image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
       exercises: [
         {
-          name: "Bench Press",
-          sets: 3,
-          reps: "10-12",
-          duration: "60 sec",
-          videoUrl: "", // Placeholder for video URL
-          instructions: "1. Lie on bench with feet flat on floor\n2. Grip barbell slightly wider than shoulders\n3. Lower bar to chest with control\n4. Press back up to starting position"
+          name: "Barbell Squats",
+          sets: 4,
+          reps: "8",
+          duration: "90 sec",
+          videoUrl: "",
+          instructions: "1. Stand with feet shoulder-width apart.\n2. Lower hips while keeping chest up.\n3. Push through heels to stand back up."
         },
         {
-          name: "Shoulder Press",
+          name: "Deadlifts",
+          sets: 3,
+          reps: "6",
+          duration: "120 sec",
+          videoUrl: "",
+          instructions: "1. Stand with feet hip-width apart, barbell in front.\n2. Hinge at hips and grip the barbell.\n3. Drive through heels to stand tall, keeping back straight."
+        },
+        {
+          name: "Pull-ups",
+          sets: 3,
+          reps: "8",
+          duration: "90 sec",
+          videoUrl: "",
+          instructions: "1. Grip the pull-up bar with palms facing forward.\n2. Pull yourself up until chin is above the bar.\n3. Lower yourself slowly."
+        },
+        {
+          name: "Dumbbell Shoulder Press",
+          sets: 3,
+          reps: "10",
+          duration: "60 sec",
+          videoUrl: "",
+          instructions: "1. Hold dumbbells at shoulder height.\n2. Press upwards until arms are fully extended.\n3. Slowly lower back to starting position."
+        },
+        {
+          name: "Russian Twists",
+          sets: 3,
+          reps: "20",
+          duration: "60 sec",
+          videoUrl: "",
+          instructions: "1. Sit on the floor, lean back slightly.\n2. Twist torso side to side, engaging core."
+        }
+      ]
+    },
+    {
+      id: 3,
+      title: "Advanced Athlete Training",
+      duration: "45 min",
+      level: "Advanced",
+      description: "Boost athleticism and explosive power with plyometrics and intense training.",
+      image: "https://images.unsplash.com/photo-1599058917765-a780eda07a3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      exercises: [
+        {
+          name: "Box Jumps",
+          sets: 3,
+          reps: "10",
+          duration: "90 sec",
+          videoUrl: "",
+          instructions: "1. Stand facing a sturdy box.\n2. Lower into a quarter squat.\n3. Jump onto the box, landing softly.\n4. Step back down and repeat."
+        },
+        {
+          name: "Sprint Intervals",
+          sets: 5,
+          reps: "30 sec sprint / 30 sec walk",
+          duration: "60 sec",
+          videoUrl: "",
+          instructions: "1. Sprint at maximum effort for 30 seconds.\n2. Walk for 30 seconds to recover.\n3. Repeat for 5 total rounds."
+        },
+        {
+          name: "Depth Jumps",
+          sets: 3,
+          reps: "8",
+          duration: "90 sec",
+          videoUrl: "",
+          instructions: "1. Step off a box or platform.\n2. Land with both feet, absorbing impact.\n3. Immediately jump upward explosively.\n4. Step back onto the box and repeat."
+        },
+        {
+          name: "Kettlebell Swings",
           sets: 3,
           reps: "12",
+          duration: "75 sec",
+          videoUrl: "",
+          instructions: "1. Stand with feet wider than shoulders, kettlebell between feet.\n2. Hinge at hips to grip kettlebell with both hands.\n3. Swing kettlebell forward and up through legs using hip drive.\n4. Control the descent and repeat."
+        },
+        {
+          name: "Bicycle Crunches",
+          sets: 3,
+          reps: "20",
           duration: "60 sec",
-          videoUrl: "", // Placeholder for video URL
-          instructions: "1. Stand with dumbbells at shoulder height\n2. Press weights overhead\n3. Lower back to shoulders with control\n4. Keep core engaged throughout"
+          videoUrl: "",
+          instructions: "1. Lie on your back with hands behind head.\n2. Lift shoulders off ground, bringing right elbow to left knee.\n3. Alternate sides in a cycling motion."
         }
       ]
     },
@@ -267,28 +357,52 @@ export const workouts = {
   ],
   cardio: [
     {
-      id: 3,
-      title: "HIIT Blast",
+      id: 4,
+      title: "Fat Loss & HIIT",
       duration: "30 min",
-      level: "Advanced",
-      description: "High-intensity interval training to boost cardio and burn calories.",
+      level: "Intermediate",
+      description: "Burn fat and improve endurance with high-intensity interval training.",
       image: "https://images.unsplash.com/photo-1434596922112-19c563067271?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
       exercises: [
         {
-          name: "Burpees",
-          sets: 4,
-          reps: "45 seconds",
-          duration: "45 sec",
-          videoUrl: "", // Placeholder for video URL
-          instructions: "1. Start standing, drop to push-up position\n2. Perform push-up\n3. Jump feet forward\n4. Jump up with hands overhead"
+          name: "Jump Squats",
+          sets: 3,
+          reps: "40 sec work / 20 sec rest",
+          duration: "60 sec",
+          videoUrl: "",
+          instructions: "1. Perform a deep squat.\n2. Explode up into a jump.\n3. Land softly and repeat.\n4. Rest for 20 seconds after each 40-second interval."
         },
         {
           name: "Mountain Climbers",
-          sets: 4,
-          reps: "60 seconds",
+          sets: 3,
+          reps: "40 sec work / 20 sec rest",
           duration: "60 sec",
-          videoUrl: "", // Placeholder for video URL
-          instructions: "1. Start in plank position\n2. Drive knees alternately to chest\n3. Keep hips level\n4. Maintain fast pace"
+          videoUrl: "",
+          instructions: "1. Start in a high plank position.\n2. Drive knees to chest alternately at a fast pace.\n3. Rest for 20 seconds after each 40-second interval."
+        },
+        {
+          name: "Burpees",
+          sets: 3,
+          reps: "40 sec work / 20 sec rest",
+          duration: "60 sec",
+          videoUrl: "",
+          instructions: "1. Drop into a squat, hands on the ground.\n2. Jump feet back into a push-up position.\n3. Jump back up and repeat.\n4. Rest for 20 seconds after each 40-second interval."
+        },
+        {
+          name: "Jump Rope",
+          sets: 3,
+          reps: "40 sec work / 20 sec rest",
+          duration: "60 sec",
+          videoUrl: "",
+          instructions: "1. Keep a steady rhythm while jumping rope.\n2. Maintain light foot contact with the ground.\n3. Rest for 20 seconds after each 40-second interval."
+        },
+        {
+          name: "Plank to Push-up",
+          sets: 3,
+          reps: "40 sec work / 20 sec rest",
+          duration: "60 sec",
+          videoUrl: "",
+          instructions: "1. Start in plank position.\n2. Lower one arm at a time to a push-up position.\n3. Return to plank position.\n4. Rest for 20 seconds after each 40-second interval."
         }
       ]
     },
@@ -507,28 +621,52 @@ export const workouts = {
   ],
   flexibility: [
     {
-      id: 4,
-      title: "Dynamic Stretch",
-      duration: "35 min",
+      id: 5,
+      title: "Flexibility & Recovery",
+      duration: "30 min",
       level: "Beginner",
-      description: "Improve flexibility and mobility with dynamic stretching routines.",
-      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      description: "Improve flexibility and reduce muscle tightness with yoga and mobility exercises.",
+      image: "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
       exercises: [
         {
-          name: "Sun Salutation",
-          sets: 3,
-          reps: "5 flows",
-          duration: "120 sec",
-          videoUrl: "", // Placeholder for video URL
-          instructions: "1. Start in mountain pose\n2. Forward fold\n3. Plank position\n4. Flow through poses with breath"
+          name: "Cat-Cow Stretch",
+          sets: 1,
+          reps: "1 min",
+          duration: "60 sec",
+          videoUrl: "",
+          instructions: "1. Start on hands and knees.\n2. Arch your back, lifting chest (cow).\n3. Round back, tucking chin to chest (cat).\n4. Repeat fluidly for 1 minute."
         },
         {
-          name: "Dynamic Lunges",
-          sets: 2,
-          reps: "10 each side",
+          name: "Downward Dog to Cobra Stretch",
+          sets: 3,
+          reps: "10 reps",
           duration: "90 sec",
-          videoUrl: "", // Placeholder for video URL
-          instructions: "1. Step forward into lunge\n2. Pulse in lunge position\n3. Step back to starting position\n4. Alternate legs"
+          videoUrl: "",
+          instructions: "1. Start in downward dog position.\n2. Lower to the floor and transition to cobra pose.\n3. Push back to downward dog.\n4. Move between poses slowly, focusing on the stretch."
+        },
+        {
+          name: "Hip Openers (Butterfly Stretch)",
+          sets: 1,
+          reps: "30 sec hold",
+          duration: "30 sec",
+          videoUrl: "",
+          instructions: "1. Sit with feet together, knees open.\n2. Press knees gently toward ground.\n3. Hold the position and breathe deeply."
+        },
+        {
+          name: "Spinal Twists",
+          sets: 1,
+          reps: "30 sec per side",
+          duration: "60 sec",
+          videoUrl: "",
+          instructions: "1. Sit or lie down, twist torso to one side.\n2. Hold position before switching sides.\n3. Keep shoulders on the ground if lying down."
+        },
+        {
+          name: "Foam Rolling Routine",
+          sets: 1,
+          reps: "10 min",
+          duration: "10 min",
+          videoUrl: "",
+          instructions: "1. Roll each major muscle group for 1-2 minutes: calves, hamstrings, quads, back.\n2. Move slowly, pausing on tight spots.\n3. Maintain steady breathing throughout."
         }
       ]
     },
@@ -538,7 +676,7 @@ export const workouts = {
       duration: "40 min",
       level: "Intermediate",
       description: "Flowing yoga sequence to improve flexibility, balance and mind-body connection.",
-      image: "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
       exercises: [
         {
           name: "Vinyasa Flow",

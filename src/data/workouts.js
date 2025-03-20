@@ -606,7 +606,7 @@ export const workouts = {
       duration: "30 min",
       level: "Advanced",
       description: "Advanced mobility routine to improve joint range of motion and prevent injuries.",
-      image: "https://images.unsplash.com/photo-1566241440091-ec10de8db2e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      image: "https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
       exercises: [
         {
           name: "Hip Mobility Flow",
@@ -640,7 +640,7 @@ export const workouts = {
       duration: "40 min",
       level: "Intermediate",
       description: "Strengthen your core while improving flexibility with Pilates-inspired movements.",
-      image: "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      image: "https://media.self.com/photos/5a79d77a9f7fc74032b0448c/4:3/w_5000,h_3750,c_limit/011618_SELF_2845.jpg",
       exercises: [
         {
           name: "The Hundred",
@@ -677,13 +677,13 @@ export const workouts = {
       ]
     },
     {
-      id: 21,
-      title: "Active Recovery Stretch",
-      duration: "30 min",
-      level: "Beginner",
-      description: "Perfect for rest days, this routine promotes blood flow and recovery without strain.",
-      image: "https://images.unsplash.com/photo-1616279969862-e71b99e79f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
-      exercises: [
+      "id": 21,
+      "title": "Active Recovery Stretch",
+      "duration": "30 min",
+      "level": "Beginner",
+      "description": "Perfect for rest days, this routine promotes blood flow and recovery without strain.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCPFFAIHBRA3TZlKu3t-o0IqlAJqG5ebpYdg&s",
+      "exercises": [
         {
           name: "Foam Rolling Sequence",
           sets: 1,
@@ -716,7 +716,7 @@ export const workouts = {
       duration: "45 min",
       level: "Intermediate",
       description: "Increase flexibility and grace with ballet-inspired stretching and strengthening.",
-      image: "https://images.unsplash.com/photo-1518247268158-6d27eca4a5ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      image: "https://static2.bigstockphoto.com/6/0/4/large1500/406358531.jpg",
       exercises: [
         {
           name: "Classical Pliés",

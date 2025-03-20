@@ -156,48 +156,6 @@
   margin: 0 auto;
 }
 
-.progress-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.progress-actions {
-  display: flex;
-  gap: 10px;
-}
-
-.test-data-button {
-  background-color: #4444ff;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.2s;
-}
-
-.test-data-button:hover {
-  background-color: #0000cc;
-}
-
-.reset-progress-button {
-  background-color: #ff4444;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.2s;
-}
-
-.reset-progress-button:hover {
-  background-color: #cc0000;
-}
-
 .progress-tabs {
   display: flex;
   gap: 10px;

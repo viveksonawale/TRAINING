@@ -8,9 +8,7 @@ import {
   addProgressPhoto,
   updatePerformanceMetric,
   checkAchievements,
-  addWorkoutToHistory,
-  resetProgress,
-  addSampleData
+  addWorkoutToHistory
 } from '../utils/progressUtils';
 import './Progress.css';
 
@@ -26,13 +24,6 @@ const Progress = () => {
     const savedProgress = initializeProgress();
     setProgress(savedProgress);
   }, []);
-
-  const handleAddTestData = () => {
-    if (window.confirm('Do you want to add sample data for testing all progress features?')) {
-      const updatedData = addSampleData();
-      setProgress(updatedData);
-    }
-  };
 
   const handleWorkoutComplete = (workout) => {
     const updatedProgress = updateWorkoutStats(workout.type, workout.duration);
@@ -115,13 +106,6 @@ const Progress = () => {
     setEditType(null);
     setEditData(null);
     setFormData({});
-  };
-
-  const handleResetProgress = () => {
-    if (window.confirm('Are you sure you want to reset all progress data? This action cannot be undone.')) {
-      const defaultData = resetProgress();
-      setProgress(defaultData);
-    }
   };
 
   const renderForm = () => {
@@ -677,17 +661,6 @@ const Progress = () => {
 
   return (
     <div className="progress-container">
-      <div className="progress-header">
-        <h2>Progress Tracking</h2>
-        <div className="progress-actions">
-          <button className="test-data-button" onClick={handleAddTestData}>
-            Add Test Data
-          </button>
-          <button className="reset-progress-button" onClick={handleResetProgress}>
-            Reset Progress
-          </button>
-        </div>
-      </div>
       <div className="progress-tabs">
         <button
           className={`tab ${activeTab === 'statistics' ? 'active' : ''}`}
